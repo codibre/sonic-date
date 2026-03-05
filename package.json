@@ -1,7 +1,7 @@
 {
   "name": "sonic-date",
   "description": "A really fast date library",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "private": false,
   "author": {
     "name": "Thiago O Santos <tos.oliveira@gmail.com>"
