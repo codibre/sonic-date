@@ -7,7 +7,7 @@ describe('incorrect calc', () => {
 		const result = date
 			.addYears(-25)
 			.addMonths(-1)
-			.differenceInYears(SonicDate.Now);
+			.differenceInYears(new SonicDate('2025-01-10T09:10:00Z'));
 
 		expect(result).toBe(25);
 	});

@@ -23,18 +23,26 @@ jobs:
       - run: printf "//`node -p \"require('url').parse('https://registry.npmjs.org').host\"`/:_authToken=${NPM_TOKEN}\n" >> ~/.npmrc
       - run: npm ci
       - run: npm run build --if-present
-      - name: 'Test'
-        uses: paambaati/codeclimate-action@v2.6.0
-        env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+      - name: Upload coverage to Qlty
+        uses: qltysh/qlty-action/coverage@v2
+        continue-on-error: true
         with:
-          coverageCommand: npm run test:coverage
-          coverageLocations: ${{github.workspace}}/coverage/lcov.info:lcov
+          token: ${{ secrets.CC_TEST_REPORTER_ID }}
+          files: coverage/lcov.info
       - uses: actions/setup-node@v3
         with:
           node-version: "lts/*"
       - run: previousVersion=$(sed 's/.*"version"&#58; "\(.*\)".*/\1/;t;d' ./package.json)
-      - run: npm i -g @semantic-release/changelog @semantic-release/commit-analyzer @semantic-release/git @semantic-release/github @semantic-release/exec @semantic-release/npm @semantic-release/release-notes-generator semantic-release
+      - run: |
+          npm i -g \
+            @semantic-release/changelog@6.0.3 \
+            @semantic-release/commit-analyzer@13.0.1 \
+            @semantic-release/git@10.0.1 \
+            @semantic-release/github@11.0.1 \
+            @semantic-release/exec@6.0.3 \
+            @semantic-release/npm@12.0.1 \
+            @semantic-release/release-notes-generator@14.0.3 \
+            semantic-release@24.2.1
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
