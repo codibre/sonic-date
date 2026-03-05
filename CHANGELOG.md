@@ -1,3 +1,10 @@
+# [0.7.0](https://github.com/codibre/sonic-date/compare/v0.6.1...v0.7.0) (2026-03-05)
+
+
+### Features
+
+* implementing new diffMethods ([8eac664](https://github.com/codibre/sonic-date/commit/8eac664de81bb8050d33c51c7ad430870d26e521))
+
 ## [0.6.1](https://github.com/codibre/sonic-date/compare/v0.6.0...v0.6.1) (2025-01-10)
 
 
