@@ -17,6 +17,7 @@ sonic-date x 2,613,432 ops/sec ±0.73% (93 runs sampled)
 
 The catch is that our implementation is not immutable, and many of the type checking date-fns does we do not. So, although date-fns is safer for a general purpose use, sonic-date is really faster and best to be used in safer environments, like a back-end service.
 
+
 We'll add more methods from date-fns by demand, always caring about performance and precision in the first place.
 
 ## How to Install
