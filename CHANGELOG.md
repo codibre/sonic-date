@@ -1,3 +1,10 @@
+## [0.7.2](https://github.com/codibre/sonic-date/compare/v0.7.1...v0.7.2) (2026-04-26)
+
+
+### Bug Fixes
+
+* publishing test ([8532b7c](https://github.com/codibre/sonic-date/commit/8532b7c123a3fd363e6187d572b5b250dcacd7ca))
+
 ## [0.7.1](https://github.com/codibre/sonic-date/compare/v0.7.0...v0.7.1) (2026-03-05)
 
 
